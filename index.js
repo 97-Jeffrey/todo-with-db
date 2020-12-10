@@ -19,6 +19,17 @@ app.get('/todos', async (req,res)=>{
   }
 })
 
+app.get('/todos/:id', async (req,res)=>{
+
+  try {
+    const todo = await pool.query('SELECT * from todo WHERE todo_id = ($1)', [req.params.id]);
+    res.json(todo.rows[0]);
+
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
 
 
 app.post("/todos", async (req,res)=>{
