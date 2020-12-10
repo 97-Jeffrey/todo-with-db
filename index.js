@@ -9,6 +9,16 @@ app.get('/',(req, res)=>{
   res.send('hello wtf');
 });
 
+app.get('/todos', async (req,res)=>{
+
+  try {
+    const allTodos = await pool.query('SELECT * from todo');
+    res.json(allTodos.rows);
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
 
 
 app.post("/todos", async (req,res)=>{
