@@ -1,11 +1,12 @@
 import React from 'react';
+import './todo.css';
 
 function Todo(props){
 
   return(
-    <h2>
+    <div className='each-todo'>
       {props.description}
-    </h2>
+    </div>
   )
 }
 

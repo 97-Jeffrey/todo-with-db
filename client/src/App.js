@@ -35,7 +35,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <h1>this is my todo list</h1>
+      <h1> Todo list</h1>
       {todoList}
     </div>
   );
